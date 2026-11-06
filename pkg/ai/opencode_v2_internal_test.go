@@ -59,6 +59,56 @@ func TestOpenCodeV2Tools(t *testing.T) {
 	}
 }
 
+func TestOpenCodeV2ToolMetadata(t *testing.T) {
+	// Current V2 tools use "patch" and persist file diffs in state.metadata.files,
+	// rather than the state.structured output used by earlier V2 releases.
+	for _, tt := range []struct {
+		name, tool, input, metadata, structured, file string
+		changes                                       int
+		deleted                                       bool
+	}{
+		{"edit all occurrences", "edit", `{"path":"edited.go","oldString":"one","newString":"one\ntwo"}`,
+			`{"files":[{"file":"edited.go","status":"modified","additions":6,"deletions":3}]}`,
+			`null`, "edited.go", 3, false},
+		{"patch deletion", "patch", `{"patchText":"*** Begin Patch\n*** Delete File: gone.go\n*** End Patch"}`,
+			`{"files":[{"file":"gone.go","status":"deleted","additions":0,"deletions":8}]}`,
+			`null`, "gone.go", -8, true},
+		{"legacy patch name with current metadata", "apply_patch", `{}`,
+			`{"files":[{"file":"new.go","status":"added","additions":3,"deletions":0}]}`,
+			`null`, "new.go", 3, false},
+		{"patch structured output", "patch", `{}`,
+			`{}`, `{"files":[{"file":"new.go","status":"added","additions":3,"deletions":0}]}`,
+			"new.go", 3, false},
+		{"patch input fallback", "patch",
+			`{"patchText":"*** Begin Patch\n*** Add File: new.go\n+one\n+two\n*** End Patch"}`,
+			`{}`, `null`, "new.go", 2, false},
+		{"malformed structured output", "edit", `{"path":"edited.go","oldString":"one","newString":"two"}`,
+			`{"files":[{"file":"edited.go","status":"modified","additions":4,"deletions":2}]}`,
+			`{"files":{}}`, "edited.go", 2, false},
+		{"structured output takes precedence", "edit", `{}`,
+			`{"files":[{"file":"wrong.go","additions":99,"deletions":0}]}`,
+			`{"files":[{"file":"edited.go","status":"modified","additions":4,"deletions":2}]}`,
+			"edited.go", 2, false},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			cwd := t.TempDir()
+			raw := `{"model":{"id":"test-model","providerID":"test"},"content":[` +
+				`{"type":"tool","name":"` + tt.tool + `","state":{"status":"completed","input":` + tt.input +
+				`,"metadata":` + tt.metadata + `,"structured":` + tt.structured + `}}]}`
+			message, ok := openCodeV2Message("msg", "session", "assistant", 1000, raw)
+			require.True(t, ok)
+
+			hh := (OpenCode{}).sessionHeartbeats(openCodeSessionInfo{ID: "session", Directory: cwd},
+				[]openCodeMessageWithParts{message})
+			require.Len(t, hh, 2)
+			assert.Equal(t, heartbeat.FileType, hh[1].EntityType)
+			assert.Equal(t, filepath.Join(cwd, tt.file), hh[1].Entity)
+			assert.Equal(t, heartbeat.PointerTo(tt.changes), hh[1].AILineChanges)
+			assert.Equal(t, tt.deleted, hh[1].IsUnsavedEntity)
+		})
+	}
+}
+
 func TestOpenCodeV2SharedSessionTable(t *testing.T) {
 	home := updateTestHome(t)
 	dbPath := filepath.Join(home, ".local", "share", "opencode", "opencode.db")
@@ -160,39 +210,50 @@ func TestOpenCodeV2SkipsLegacyFiles(t *testing.T) {
 func TestOpenCodeV2MultiplePatchFilesNativePaths(t *testing.T) {
 	cwd := t.TempDir()
 	external := filepath.Join(t.TempDir(), "external.go")
-	structured := mustJSON(t, map[string]any{
+	output := json.RawMessage(mustJSON(t, map[string]any{
 		"files": []map[string]any{
 			{"file": "nested/new.go", "status": "added", "additions": 3, "deletions": 0},
 			{"file": filepath.ToSlash(external), "status": "modified", "additions": 4, "deletions": 2},
 			{"file": "gone.go", "status": "deleted", "additions": 0, "deletions": 5},
 		},
-	})
-	hh := (OpenCode{}).toolHeartbeats("2", "model", "session", cwd, time.UnixMilli(1000), openCodePart{
-		Type: "tool", Tool: "apply_patch", State: &openCodeToolState{
-			Status: "completed", Structured: json.RawMessage(structured),
-		},
-	})
-	require.Len(t, hh, 3)
-	assert.Equal(t, filepath.ToSlash(filepath.Join(cwd, "nested", "new.go")), filepath.ToSlash(hh[0].Entity))
-	assert.Equal(t, filepath.ToSlash(external), filepath.ToSlash(hh[1].Entity))
-	assert.Equal(t, filepath.ToSlash(filepath.Join(cwd, "gone.go")), filepath.ToSlash(hh[2].Entity))
-	assert.Equal(t, heartbeat.PointerTo(3), hh[0].AILineChanges)
-	assert.Equal(t, heartbeat.PointerTo(2), hh[1].AILineChanges)
-	assert.Equal(t, heartbeat.PointerTo(-5), hh[2].AILineChanges)
-	assert.True(t, hh[2].IsUnsavedEntity)
+	}))
+
+	for _, tt := range []struct {
+		tool  string
+		state openCodeToolState
+	}{
+		{"apply_patch", openCodeToolState{Status: "completed", Structured: output}},
+		{"patch", openCodeToolState{Status: "completed", Metadata: output}},
+	} {
+		t.Run(tt.tool, func(t *testing.T) {
+			hh := (OpenCode{}).toolHeartbeats("2", "model", "session", cwd, time.UnixMilli(1000), openCodePart{
+				Type: "tool", Tool: tt.tool, State: &tt.state,
+			})
+			require.Len(t, hh, 3)
+			assert.Equal(t, filepath.ToSlash(filepath.Join(cwd, "nested", "new.go")), filepath.ToSlash(hh[0].Entity))
+			assert.Equal(t, filepath.ToSlash(external), filepath.ToSlash(hh[1].Entity))
+			assert.Equal(t, filepath.ToSlash(filepath.Join(cwd, "gone.go")), filepath.ToSlash(hh[2].Entity))
+			assert.Equal(t, heartbeat.PointerTo(3), hh[0].AILineChanges)
+			assert.Equal(t, heartbeat.PointerTo(2), hh[1].AILineChanges)
+			assert.Equal(t, heartbeat.PointerTo(-5), hh[2].AILineChanges)
+			assert.True(t, hh[2].IsUnsavedEntity)
+		})
+	}
 }
 
 func TestOpenCodeV2UnsuccessfulTools(t *testing.T) {
-	for _, status := range []string{"pending", "running", "error"} {
+	for _, status := range []string{"pending", "streaming", "running", "error"} {
 		t.Run(status, func(t *testing.T) {
 			input := `{"path":"main.go","content":"hello"}`
-			if status == "pending" {
+			if status == "pending" || status == "streaming" {
 				input = `""`
 			}
 
 			raw := `{"content":[{"type":"tool","name":"write","state":{"status":"` + status +
 				`","input":` + input + `,"structured":{},"content":[],` +
-				`"error":{"type":"unknown","message":"failed"}}}]}`
+				`"error":{"type":"unknown","message":"failed"}}},` +
+				`{"type":"tool","name":"patch","state":{"status":"` + status + `","input":` + input +
+				`,"metadata":{"files":[{"file":"main.go","status":"modified","additions":4,"deletions":1}]}}}]}`
 			message, ok := openCodeV2Message("msg", "session", "assistant", 1000, raw)
 			require.True(t, ok)
 

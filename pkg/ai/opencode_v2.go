@@ -144,37 +144,44 @@ func openCodeV2Message(id, sessionID, kind string, created int64, raw string) (o
 	return message, true
 }
 
-// V2 built-in tools store their output in state.structured, with file/status
-// fields instead of the legacy metadata filePath/type fields.
+// V2 file diffs use file/status instead of the legacy filePath/type fields.
+// Earlier releases stored them in state.structured; current releases persist
+// them in state.metadata.files.
 func (g OpenCode) v2ToolFileHeartbeats(
 	version, model, sessionID, cwd string,
 	timestamp time.Time,
 	state openCodeToolState,
 ) Heartbeats {
-	var output struct {
-		Files []struct {
-			File      string `json:"file"`
-			Status    string `json:"status"`
-			Additions int    `json:"additions"`
-			Deletions int    `json:"deletions"`
-		} `json:"files"`
-	}
-	if json.Unmarshal(state.Structured, &output) != nil {
-		return nil
-	}
-
-	var hh Heartbeats
-
-	for _, file := range output.Files {
-		if file.File == "" {
+	for _, raw := range []json.RawMessage{state.Structured, state.Metadata} {
+		var output struct {
+			Files []struct {
+				File      string `json:"file"`
+				Status    string `json:"status"`
+				Additions int    `json:"additions"`
+				Deletions int    `json:"deletions"`
+			} `json:"files"`
+		}
+		if json.Unmarshal(raw, &output) != nil {
 			continue
 		}
 
-		h := g.fileHeartbeat(version, model, sessionID, openCodeResolvePath(cwd, file.File),
-			file.Additions-file.Deletions, timestamp)
-		h.IsUnsavedEntity = file.Status == "deleted"
-		hh = append(hh, h)
+		var hh Heartbeats
+
+		for _, file := range output.Files {
+			if file.File == "" {
+				continue
+			}
+
+			h := g.fileHeartbeat(version, model, sessionID, openCodeResolvePath(cwd, file.File),
+				file.Additions-file.Deletions, timestamp)
+			h.IsUnsavedEntity = file.Status == "deleted"
+			hh = append(hh, h)
+		}
+
+		if len(hh) > 0 {
+			return hh
+		}
 	}
 
-	return hh
+	return nil
 }

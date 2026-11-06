@@ -1057,7 +1057,7 @@ func (g OpenCode) toolHeartbeats(
 		return nil
 	}
 
-	if part.Tool == "edit" || part.Tool == "apply_patch" {
+	if part.Tool == "edit" || part.Tool == "patch" || part.Tool == "apply_patch" {
 		if hh := g.v2ToolFileHeartbeats(version, model, sessionID, cwd, timestamp, *part.State); len(hh) > 0 {
 			return hh
 		}
@@ -1068,7 +1068,7 @@ func (g OpenCode) toolHeartbeats(
 		return g.editHeartbeats(version, model, sessionID, cwd, timestamp, *part.State)
 	case "write":
 		return g.writeHeartbeats(version, model, sessionID, cwd, timestamp, *part.State)
-	case "apply_patch":
+	case "patch", "apply_patch":
 		return g.applyPatchHeartbeats(version, model, sessionID, cwd, timestamp, *part.State)
 	default:
 		return nil
