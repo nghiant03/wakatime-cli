@@ -16,15 +16,15 @@ import (
 	"unicode/utf8"
 
 	"github.com/spf13/viper"
-	"github.com/wakatime/wakatime-cli/pkg/api"
-	"github.com/wakatime/wakatime-cli/pkg/diagnostic"
-	"github.com/wakatime/wakatime-cli/pkg/file"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/ini"
-	"github.com/wakatime/wakatime-cli/pkg/log"
-	"github.com/wakatime/wakatime-cli/pkg/params"
-	"github.com/wakatime/wakatime-cli/pkg/regex"
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	"github.com/nghiant03/wakatime-cli/pkg/api"
+	"github.com/nghiant03/wakatime-cli/pkg/diagnostic"
+	"github.com/nghiant03/wakatime-cli/pkg/file"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/ini"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/params"
+	"github.com/nghiant03/wakatime-cli/pkg/regex"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 )
 
 // Config contains filtering configurations.

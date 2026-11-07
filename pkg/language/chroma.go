@@ -6,9 +6,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/wakatime/wakatime-cli/pkg/file"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/file"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 
 	"github.com/alecthomas/chroma/v2"
 	"github.com/alecthomas/chroma/v2/lexers"

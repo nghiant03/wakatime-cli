@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/api"
-	"github.com/wakatime/wakatime-cli/pkg/diagnostic"
-	"github.com/wakatime/wakatime-cli/pkg/version"
+	"github.com/nghiant03/wakatime-cli/pkg/api"
+	"github.com/nghiant03/wakatime-cli/pkg/diagnostic"
+	"github.com/nghiant03/wakatime-cli/pkg/version"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/log/setup"
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	"github.com/nghiant03/wakatime-cli/pkg/log/setup"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

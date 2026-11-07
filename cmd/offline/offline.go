@@ -5,13 +5,13 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/wakatime/wakatime-cli/cmd/handler"
-	"github.com/wakatime/wakatime-cli/pkg/api"
-	"github.com/wakatime/wakatime-cli/pkg/filter"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/log"
-	"github.com/wakatime/wakatime-cli/pkg/offline"
-	"github.com/wakatime/wakatime-cli/pkg/params"
+	"github.com/nghiant03/wakatime-cli/cmd/handler"
+	"github.com/nghiant03/wakatime-cli/pkg/api"
+	"github.com/nghiant03/wakatime-cli/pkg/filter"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/offline"
+	"github.com/nghiant03/wakatime-cli/pkg/params"
 
 	"github.com/spf13/viper"
 )

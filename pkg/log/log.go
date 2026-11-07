@@ -7,7 +7,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/wakatime/wakatime-cli/pkg/version"
+	"github.com/nghiant03/wakatime-cli/pkg/version"
 )
 
 const (

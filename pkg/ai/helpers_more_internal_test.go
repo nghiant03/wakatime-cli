@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	wakalog "github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	wakalog "github.com/nghiant03/wakatime-cli/pkg/log"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

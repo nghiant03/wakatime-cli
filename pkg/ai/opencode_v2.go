@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 )
 
 // Read sessions with v2 messages, including archived and child sessions. Check

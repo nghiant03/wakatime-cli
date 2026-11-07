@@ -1,17 +1,17 @@
 package handler
 
 import (
-	"github.com/wakatime/wakatime-cli/pkg/ai"
-	"github.com/wakatime/wakatime-cli/pkg/apikey"
-	"github.com/wakatime/wakatime-cli/pkg/deps"
-	"github.com/wakatime/wakatime-cli/pkg/fileexperts"
-	"github.com/wakatime/wakatime-cli/pkg/filestats"
-	"github.com/wakatime/wakatime-cli/pkg/filter"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/language"
-	"github.com/wakatime/wakatime-cli/pkg/params"
-	"github.com/wakatime/wakatime-cli/pkg/project"
-	"github.com/wakatime/wakatime-cli/pkg/remote"
+	"github.com/nghiant03/wakatime-cli/pkg/ai"
+	"github.com/nghiant03/wakatime-cli/pkg/apikey"
+	"github.com/nghiant03/wakatime-cli/pkg/deps"
+	"github.com/nghiant03/wakatime-cli/pkg/fileexperts"
+	"github.com/nghiant03/wakatime-cli/pkg/filestats"
+	"github.com/nghiant03/wakatime-cli/pkg/filter"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/language"
+	"github.com/nghiant03/wakatime-cli/pkg/params"
+	"github.com/nghiant03/wakatime-cli/pkg/project"
+	"github.com/nghiant03/wakatime-cli/pkg/remote"
 )
 
 // Preprocessor is a function used to preprocess heartbeat parameters.

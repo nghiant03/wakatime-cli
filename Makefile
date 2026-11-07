@@ -6,7 +6,7 @@ BUILD_DIR?="./build"
 CGO_ENABLED?=0
 COMMIT?=$(shell git rev-parse --short HEAD)
 DATE?=$(shell date -u '+%Y-%m-%dT%H:%M:%S %Z')
-REPO=github.com/wakatime/wakatime-cli
+REPO=github.com/nghiant03/wakatime-cli
 VERSION?=<local-build>
 
 # ld flags for go build

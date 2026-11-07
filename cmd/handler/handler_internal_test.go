@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	paramspkg "github.com/wakatime/wakatime-cli/pkg/params"
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	paramspkg "github.com/nghiant03/wakatime-cli/pkg/params"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"

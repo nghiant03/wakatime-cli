@@ -3,7 +3,7 @@ package windows_test
 import (
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/windows"
+	"github.com/nghiant03/wakatime-cli/pkg/windows"
 
 	"github.com/stretchr/testify/assert"
 )

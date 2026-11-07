@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
 )
 
 // Kiro contains params for detecting heartbeats from Kiro local activity.

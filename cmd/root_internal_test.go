@@ -3,7 +3,7 @@ package cmd
 import (
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/assert"

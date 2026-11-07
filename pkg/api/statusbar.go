@@ -7,7 +7,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/wakatime/wakatime-cli/pkg/summary"
+	"github.com/nghiant03/wakatime-cli/pkg/summary"
 )
 
 // Today fetches code stats for Today.

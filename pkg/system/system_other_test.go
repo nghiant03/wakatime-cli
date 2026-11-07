@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/wakatime/wakatime-cli/pkg/system"
+	"github.com/nghiant03/wakatime-cli/pkg/system"
 )
 
 func TestOSName(t *testing.T) {

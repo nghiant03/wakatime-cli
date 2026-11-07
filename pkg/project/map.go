@@ -4,7 +4,7 @@ import (
 	"context"
 	"path/filepath"
 
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 
 	"github.com/slongfield/pyfmt"
 )

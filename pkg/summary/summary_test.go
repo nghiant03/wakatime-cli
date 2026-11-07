@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/output"
-	"github.com/wakatime/wakatime-cli/pkg/summary"
+	"github.com/nghiant03/wakatime-cli/pkg/output"
+	"github.com/nghiant03/wakatime-cli/pkg/summary"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

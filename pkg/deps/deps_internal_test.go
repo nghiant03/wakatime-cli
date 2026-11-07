@@ -105,8 +105,8 @@ func TestParserStateMachineBranches(t *testing.T) {
 		p.processLiteralString(`"fmt"`)
 		assert.Empty(t, p.Output)
 
-		p.processLiteralString(`"github.com/wakatime/wakatime-cli"`)
-		assert.Equal(t, []string{"github.com/wakatime/wakatime-cli"}, p.Output)
+		p.processLiteralString(`"github.com/nghiant03/wakatime-cli"`)
+		assert.Equal(t, []string{"github.com/nghiant03/wakatime-cli"}, p.Output)
 
 		p.processNameFunction()
 		assert.Equal(t, StateGoUnknown, p.State)
@@ -261,10 +261,10 @@ func TestParserStateMachineBranches(t *testing.T) {
 		p.processPunctuation("{")
 		p.processNameTag(`"dependencies"`)
 		p.processPunctuation("{")
-		p.processNameTag(`"github.com/wakatime/wakatime-cli"`)
+		p.processNameTag(`"github.com/nghiant03/wakatime-cli"`)
 		p.processPunctuation("}")
 		assert.Equal(t, StateJSONUnknown, p.State)
-		assert.Equal(t, []string{"npm", "github.com/wakatime/wakatime-cli"}, p.Output)
+		assert.Equal(t, []string{"npm", "github.com/nghiant03/wakatime-cli"}, p.Output)
 	})
 
 	t.Run("csharp", func(t *testing.T) {

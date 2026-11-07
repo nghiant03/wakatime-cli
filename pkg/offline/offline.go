@@ -14,10 +14,10 @@ import (
 
 	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/ini"
-	"github.com/wakatime/wakatime-cli/pkg/log"
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/ini"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 
 	bolt "go.etcd.io/bbolt"
 	bolterrors "go.etcd.io/bbolt/errors"

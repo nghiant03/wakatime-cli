@@ -7,7 +7,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/wakatime/wakatime-cli/pkg/goal"
+	"github.com/nghiant03/wakatime-cli/pkg/goal"
 )
 
 // Goal fetches goal for the given goal id.

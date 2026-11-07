@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/api"
-	"github.com/wakatime/wakatime-cli/pkg/version"
+	"github.com/nghiant03/wakatime-cli/pkg/api"
+	"github.com/nghiant03/wakatime-cli/pkg/version"
 
 	"github.com/Azure/go-ntlmssp"
 	"github.com/matishsiao/goInfo"

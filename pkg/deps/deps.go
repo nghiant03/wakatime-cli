@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"runtime/debug"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/log"
-	"github.com/wakatime/wakatime-cli/pkg/regex"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/regex"
 )
 
 const (

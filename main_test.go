@@ -19,12 +19,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/offline"
-	"github.com/wakatime/wakatime-cli/pkg/project"
-	"github.com/wakatime/wakatime-cli/pkg/version"
-	"github.com/wakatime/wakatime-cli/pkg/windows"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/offline"
+	"github.com/nghiant03/wakatime-cli/pkg/project"
+	"github.com/nghiant03/wakatime-cli/pkg/version"
+	"github.com/nghiant03/wakatime-cli/pkg/windows"
 
 	"github.com/gandarez/go-realpath"
 	"github.com/stretchr/testify/assert"

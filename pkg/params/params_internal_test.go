@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"github.com/spf13/viper"
-	"github.com/wakatime/wakatime-cli/pkg/ini"
-	"github.com/wakatime/wakatime-cli/pkg/regex"
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	"github.com/nghiant03/wakatime-cli/pkg/ini"
+	"github.com/nghiant03/wakatime-cli/pkg/regex"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

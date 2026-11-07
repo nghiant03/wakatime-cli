@@ -8,9 +8,9 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/wakatime/wakatime-cli/pkg/log"
-	"github.com/wakatime/wakatime-cli/pkg/system"
-	"github.com/wakatime/wakatime-cli/pkg/version"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/system"
+	"github.com/nghiant03/wakatime-cli/pkg/version"
 
 	"github.com/matishsiao/goInfo"
 )

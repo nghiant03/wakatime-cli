@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/offline"
+	"github.com/nghiant03/wakatime-cli/pkg/offline"
 
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"

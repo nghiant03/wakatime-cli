@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/lexer"
+	"github.com/nghiant03/wakatime-cli/pkg/lexer"
 
 	"github.com/stretchr/testify/assert"
 )

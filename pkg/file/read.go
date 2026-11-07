@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 )
 
 // MaxFileSizeSupported is the max number of bytes we will ever read from a file. Files

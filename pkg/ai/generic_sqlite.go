@@ -11,7 +11,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 
 	// Register the pure-Go SQLite driver used to read provider session databases.
 	_ "modernc.org/sqlite"

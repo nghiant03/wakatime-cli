@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/filestats"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/filestats"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

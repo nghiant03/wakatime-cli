@@ -11,11 +11,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/offline"
-	"github.com/wakatime/wakatime-cli/pkg/version"
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/offline"
+	"github.com/nghiant03/wakatime-cli/pkg/version"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

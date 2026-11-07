@@ -13,9 +13,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/ini"
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/ini"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 
 	// Register the pure-Go SQLite driver used to read Cursor state.vscdb files.
 	_ "modernc.org/sqlite"

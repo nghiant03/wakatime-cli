@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/ini"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/ini"
 
 	// Register the pure-Go SQLite driver used to read VS Code state.vscdb files.
 	_ "modernc.org/sqlite"

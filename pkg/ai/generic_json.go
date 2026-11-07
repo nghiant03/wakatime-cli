@@ -18,8 +18,8 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 )
 
 type genericAIProvider struct {

@@ -8,9 +8,9 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/wakatime/wakatime-cli/pkg/diagnostic"
-	"github.com/wakatime/wakatime-cli/pkg/log"
-	"github.com/wakatime/wakatime-cli/pkg/version"
+	"github.com/nghiant03/wakatime-cli/pkg/diagnostic"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/version"
 )
 
 type diagnosticsBody struct {

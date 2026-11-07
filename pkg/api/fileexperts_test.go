@@ -7,9 +7,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/api"
-	"github.com/wakatime/wakatime-cli/pkg/fileexperts"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/api"
+	"github.com/nghiant03/wakatime-cli/pkg/fileexperts"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

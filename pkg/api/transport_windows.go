@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 )
 
 func loadSystemRoots(ctx context.Context) (*x509.CertPool, error) {

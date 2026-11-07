@@ -11,9 +11,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/cmd/today"
-	"github.com/wakatime/wakatime-cli/pkg/api"
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/cmd/today"
+	"github.com/nghiant03/wakatime-cli/pkg/api"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
 
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"

@@ -18,13 +18,13 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	cmdheartbeat "github.com/wakatime/wakatime-cli/cmd/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/ai"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/ini"
-	"github.com/wakatime/wakatime-cli/pkg/params"
-	"github.com/wakatime/wakatime-cli/pkg/regex"
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	cmdheartbeat "github.com/nghiant03/wakatime-cli/cmd/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/ai"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/ini"
+	"github.com/nghiant03/wakatime-cli/pkg/params"
+	"github.com/nghiant03/wakatime-cli/pkg/regex"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 )
 
 func TestWithAISyncDoesNotUpdateLastParsedAtBeforeParsing(t *testing.T) {

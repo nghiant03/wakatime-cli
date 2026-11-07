@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/wakatime/wakatime-cli/pkg/regex"
+	"github.com/nghiant03/wakatime-cli/pkg/regex"
 )
 
 // SanitizeConfig defines how a heartbeat should be sanitized.

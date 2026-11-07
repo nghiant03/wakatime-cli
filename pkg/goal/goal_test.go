@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/goal"
-	"github.com/wakatime/wakatime-cli/pkg/output"
+	"github.com/nghiant03/wakatime-cli/pkg/goal"
+	"github.com/nghiant03/wakatime-cli/pkg/output"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

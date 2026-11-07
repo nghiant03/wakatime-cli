@@ -6,10 +6,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/wakatime/wakatime-cli/pkg/api"
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
-	"github.com/wakatime/wakatime-cli/pkg/offline"
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	"github.com/nghiant03/wakatime-cli/pkg/api"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/pkg/offline"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

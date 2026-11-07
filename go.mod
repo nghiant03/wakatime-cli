@@ -1,4 +1,4 @@
-module github.com/wakatime/wakatime-cli
+module github.com/nghiant03/wakatime-cli
 
 go 1.27.3
 

@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/wakatime/wakatime-cli/pkg/file"
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/file"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 )
 
 // Mercurial contains mercurial data.

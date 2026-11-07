@@ -9,7 +9,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 )
 
 // OSName returns the runtime machine's operating system name.

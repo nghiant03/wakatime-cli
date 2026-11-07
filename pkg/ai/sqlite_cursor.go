@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wakatime/wakatime-cli/pkg/ini"
+	"github.com/nghiant03/wakatime-cli/pkg/ini"
 )
 
 const aiSQLiteBatchSize = 128

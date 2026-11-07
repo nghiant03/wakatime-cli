@@ -12,10 +12,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/log"
-	"github.com/wakatime/wakatime-cli/pkg/regex"
-	"github.com/wakatime/wakatime-cli/pkg/windows"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/regex"
+	"github.com/nghiant03/wakatime-cli/pkg/windows"
 
 	"github.com/gandarez/go-realpath"
 	"golang.org/x/text/cases"
@@ -344,7 +344,7 @@ func DetectWithRevControl(
 }
 
 func obfuscateProjectName(ctx context.Context, folder string) string {
-	// when folder unknown, use Unknown Project (https://github.com/wakatime/wakatime-cli/issues/1164)
+	// when folder unknown, use Unknown Project (https://github.com/nghiant03/wakatime-cli/issues/1164)
 	if folder == "" {
 		return ""
 	}

@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
-	"github.com/wakatime/wakatime-cli/pkg/version"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/pkg/version"
 
 	"github.com/spf13/viper"
 )

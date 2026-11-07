@@ -8,9 +8,9 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/wakatime/wakatime-cli/pkg/fileexperts"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/fileexperts"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 )
 
 // FileExperts fetches file experts for Today.

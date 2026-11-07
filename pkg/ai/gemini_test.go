@@ -11,8 +11,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wakatime/wakatime-cli/pkg/ai"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/ai"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
 )
 
 func TestGeminiParse(t *testing.T) {
@@ -483,7 +483,7 @@ func TestGeminiParse_AntigravityProducts(t *testing.T) {
 			diff: "@@ -29,4 +29,8 @@\n" +
 				" [wakatime]: https://wakatime.com/\n" +
 				" [codex-cli]: https://developers.openai.com/codex/cli\n" +
-				" [wakatime-cli]: https://github.com/wakatime/wakatime-cli\n" +
+				" [wakatime-cli]: https://github.com/nghiant03/wakatime-cli\n" +
 				"+\n" +
 				"+---\n" +
 				"+Made with ❤️ by Antigravity\n" +

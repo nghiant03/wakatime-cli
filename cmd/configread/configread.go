@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
-	"github.com/wakatime/wakatime-cli/pkg/vipertools"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
 
 	"github.com/spf13/viper"
 )

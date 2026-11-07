@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	cmdapi "github.com/wakatime/wakatime-cli/cmd/api"
-	"github.com/wakatime/wakatime-cli/pkg/params"
+	cmdapi "github.com/nghiant03/wakatime-cli/cmd/api"
+	"github.com/nghiant03/wakatime-cli/pkg/params"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

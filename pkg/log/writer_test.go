@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/zap/zapcore"

@@ -5,12 +5,12 @@ import (
 	"errors"
 	"fmt"
 
-	cmdapi "github.com/wakatime/wakatime-cli/cmd/api"
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
-	"github.com/wakatime/wakatime-cli/pkg/log"
-	"github.com/wakatime/wakatime-cli/pkg/params"
-	"github.com/wakatime/wakatime-cli/pkg/summary"
-	"github.com/wakatime/wakatime-cli/pkg/wakaerror"
+	cmdapi "github.com/nghiant03/wakatime-cli/cmd/api"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/params"
+	"github.com/nghiant03/wakatime-cli/pkg/summary"
+	"github.com/nghiant03/wakatime-cli/pkg/wakaerror"
 
 	"github.com/spf13/viper"
 )

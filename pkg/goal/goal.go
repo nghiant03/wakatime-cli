@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/wakatime/wakatime-cli/pkg/output"
+	"github.com/nghiant03/wakatime-cli/pkg/output"
 )
 
 type (

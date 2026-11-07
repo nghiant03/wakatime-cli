@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
 
 	"github.com/alecthomas/chroma/v2"
 )

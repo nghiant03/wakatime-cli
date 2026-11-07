@@ -3,8 +3,8 @@ package offline
 import (
 	"fmt"
 
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
-	"github.com/wakatime/wakatime-cli/pkg/wakaerror"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/pkg/wakaerror"
 )
 
 // ErrOpenDB is an error returned when the database cannot be opened.

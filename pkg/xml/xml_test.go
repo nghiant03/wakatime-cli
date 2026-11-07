@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/xml"
+	"github.com/nghiant03/wakatime-cli/pkg/xml"
 
 	"github.com/stretchr/testify/assert"
 )

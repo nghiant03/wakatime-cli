@@ -16,9 +16,9 @@ import (
 	"time"
 
 	"github.com/mitchellh/go-homedir"
-	"github.com/wakatime/wakatime-cli/pkg/file"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/file"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 
 	"github.com/kevinburke/ssh_config"
 	"github.com/pkg/sftp"

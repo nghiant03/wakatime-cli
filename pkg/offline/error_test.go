@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
-	"github.com/wakatime/wakatime-cli/pkg/offline"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/pkg/offline"
 
 	"github.com/stretchr/testify/assert"
 )

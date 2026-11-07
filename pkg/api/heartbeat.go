@@ -11,8 +11,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 )
 
 // SendHeartbeats sends a bulk of heartbeats to the wakatime api and returns the result.

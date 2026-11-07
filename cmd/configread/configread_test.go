@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/cmd/configread"
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/cmd/configread"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
 
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"

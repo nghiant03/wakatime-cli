@@ -7,8 +7,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/windows"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/windows"
 
 	"github.com/gandarez/go-realpath"
 	"github.com/stretchr/testify/assert"

@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/api"
-	"github.com/wakatime/wakatime-cli/pkg/exitcode"
+	"github.com/nghiant03/wakatime-cli/pkg/api"
+	"github.com/nghiant03/wakatime-cli/pkg/exitcode"
 
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/zap/zapcore"

@@ -1,8 +1,8 @@
 package lexer
 
 import (
-	"github.com/wakatime/wakatime-cli/pkg/doctype"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/doctype"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
 
 	"github.com/alecthomas/chroma/v2"
 	"github.com/alecthomas/chroma/v2/lexers"

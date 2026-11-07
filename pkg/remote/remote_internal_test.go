@@ -9,8 +9,8 @@ import (
 	"testing"
 
 	"github.com/kevinburke/ssh_config"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

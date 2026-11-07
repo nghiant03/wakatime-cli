@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/wakatime/wakatime-cli/pkg/apikey"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
-	"github.com/wakatime/wakatime-cli/pkg/regex"
+	"github.com/nghiant03/wakatime-cli/pkg/apikey"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/regex"
 
 	"github.com/gandarez/go-realpath"
 	"github.com/stretchr/testify/assert"

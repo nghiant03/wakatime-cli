@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
 )
 
 func TestAIUserAgentWithModelAndEditorPreservesConfiguredEditor(t *testing.T) {

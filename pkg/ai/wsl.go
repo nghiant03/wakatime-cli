@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unicode/utf16"
 
-	"github.com/wakatime/wakatime-cli/pkg/heartbeat"
+	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
 )
 
 type wslHomesKey struct{}

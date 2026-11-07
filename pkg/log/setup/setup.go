@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/wakatime/wakatime-cli/cmd/logfile"
-	"github.com/wakatime/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/cmd/logfile"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
 
 	"github.com/spf13/viper"
 	"gopkg.in/natefinch/lumberjack.v2"

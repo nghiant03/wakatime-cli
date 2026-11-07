@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/wakatime/wakatime-cli/pkg/log"
-	"github.com/wakatime/wakatime-cli/pkg/windows"
+	"github.com/nghiant03/wakatime-cli/pkg/log"
+	"github.com/nghiant03/wakatime-cli/pkg/windows"
 
 	"github.com/gandarez/go-realpath"
 )

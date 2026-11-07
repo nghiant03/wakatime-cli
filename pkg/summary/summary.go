@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/wakatime/wakatime-cli/pkg/output"
+	"github.com/nghiant03/wakatime-cli/pkg/output"
 )
 
 type (
