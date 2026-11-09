@@ -494,6 +494,28 @@ func TestCrushParseServerGlobalStore(t *testing.T) {
 	assert.Equal(t, "server", hh[0].AISession)
 }
 
+func TestCrushParseDataDirUsesWorkingDirectory(t *testing.T) {
+	home, _ := crushFixtureHome(t)
+	project := filepath.Join(home, "project")
+	data := filepath.Join(project, ".crush")
+	db := crushFixtureDB(t, data)
+	t.Chdir(project)
+	t.Setenv("CRUSH_DATA_DIR", data)
+
+	at := time.Now().Add(-time.Minute).Unix()
+	crushFixtureSession(t, db, "unregistered", "", at)
+	crushFixtureMessage(t, db, "unregistered-prompt", "unregistered", "user", "",
+		`[{"type":"text","data":{"text":"Local project prompt"}}]`, at, false)
+
+	hh, err := (Crush{}).Parse(t.Context())
+	require.NoError(t, err)
+	require.NotEmpty(t, hh)
+
+	for _, h := range hh {
+		assert.Equal(t, project, h.ProjectPathOverride)
+	}
+}
+
 func TestCrushParseProjectStoreDiscovery(t *testing.T) {
 	for _, mode := range []string{"global-data", "xdg-data", "data-dir"} {
 		t.Run(mode, func(t *testing.T) {

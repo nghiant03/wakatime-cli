@@ -118,7 +118,14 @@ func crushStores(ctx context.Context, home, project string) []crushStore {
 	}
 
 	if override := strings.TrimSpace(os.Getenv("CRUSH_DATA_DIR")); override != "" {
-		add(override, project)
+		cwd := project
+		if cwd == "" {
+			if workingDir, err := os.Getwd(); err == nil {
+				cwd = workingDir
+			}
+		}
+
+		add(override, cwd)
 	}
 
 	for dir := project; dir != ""; dir = filepath.Dir(dir) {

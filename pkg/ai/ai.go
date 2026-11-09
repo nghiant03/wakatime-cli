@@ -15,7 +15,6 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/spf13/viper"
 	"github.com/nghiant03/wakatime-cli/pkg/api"
 	"github.com/nghiant03/wakatime-cli/pkg/diagnostic"
 	"github.com/nghiant03/wakatime-cli/pkg/file"
@@ -25,6 +24,7 @@ import (
 	"github.com/nghiant03/wakatime-cli/pkg/params"
 	"github.com/nghiant03/wakatime-cli/pkg/regex"
 	"github.com/nghiant03/wakatime-cli/pkg/vipertools"
+	"github.com/spf13/viper"
 )
 
 // Config contains filtering configurations.
@@ -319,6 +319,10 @@ func parseAIHeartbeats(
 	}
 
 	tracked := make(map[string]bool)
+	projectInfo := ProjectInfo{
+		Alternate: config.Project.Alternate, Override: config.Project.Override,
+		ProjectPathOverride: config.Sanitize.ProjectPathOverride,
+	}
 
 	parserConfig := func(name string) ParserConfig {
 		state := checkpoints.parser(name, after)
@@ -326,14 +330,16 @@ func parseAIHeartbeats(
 
 		return ParserConfig{
 			After: state.discoveryAfter(), UserAgents: userAgents, FallbackUserAgent: config.Plugin,
-			checkpoint: state,
+			ProjectInfo: projectInfo, checkpoint: state,
 		}
 	}
 
 	// Parsers reading SQLite databases do not take part in checkpoints. They keep
 	// their own per-database cursors and use the global cutoff, which keeps row
 	// hashes out of the checkpoint file that is loaded and rewritten on every sync.
-	sqliteConfig := ParserConfig{After: after, UserAgents: userAgents, FallbackUserAgent: config.Plugin}
+	sqliteConfig := ParserConfig{
+		After: after, UserAgents: userAgents, FallbackUserAgent: config.Plugin, ProjectInfo: projectInfo,
+	}
 
 	parsers := []Parser{
 		OpenClaude(parserConfig((OpenClaude{}).Name())),
