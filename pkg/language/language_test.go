@@ -1,6 +1,7 @@
 package language_test
 
 import (
+	"bytes"
 	"context"
 	"fmt"
 	"testing"
@@ -8,6 +9,7 @@ import (
 	"github.com/nghiant03/wakatime-cli/pkg/heartbeat"
 	"github.com/nghiant03/wakatime-cli/pkg/language"
 	"github.com/nghiant03/wakatime-cli/pkg/lexer"
+	wakalog "github.com/nghiant03/wakatime-cli/pkg/log"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -47,6 +49,28 @@ func TestWithDetection(t *testing.T) {
 			Status: 201,
 		},
 	}, result)
+}
+
+func TestWithDetection_SkipsAppHeartbeat(t *testing.T) {
+	var logs bytes.Buffer
+
+	ctx := wakalog.ToContext(t.Context(), wakalog.New(&logs))
+	entity := "Crush 8058f480-13c9-48b3-9d72-6bc451cc33aa"
+	handle := language.WithDetection(language.Config{GuessLanguage: true})(
+		func(_ context.Context, hh []heartbeat.Heartbeat) ([]heartbeat.Result, error) {
+			require.Len(t, hh, 1)
+			assert.Equal(t, entity, hh[0].Entity)
+			assert.Equal(t, heartbeat.AppType, hh[0].EntityType)
+			assert.Nil(t, hh[0].Language)
+
+			return []heartbeat.Result{{Status: 201}}, nil
+		},
+	)
+
+	result, err := handle(ctx, []heartbeat.Heartbeat{{Entity: entity, EntityType: heartbeat.AppType}})
+	require.NoError(t, err)
+	assert.Equal(t, []heartbeat.Result{{Status: 201}}, result)
+	assert.Empty(t, logs.String())
 }
 
 func TestWithDetection_Override(t *testing.T) {

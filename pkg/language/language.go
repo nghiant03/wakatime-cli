@@ -29,6 +29,10 @@ func WithDetection(config Config) heartbeat.HandleOption {
 			// logger.Debugln("execute language detection")
 
 			for n, h := range hh {
+				if h.EntityType != heartbeat.FileType {
+					continue
+				}
+
 				if hh[n].Language != nil {
 					continue
 				}
